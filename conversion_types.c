@@ -36,7 +36,6 @@ int print_string(va_list ap)
 			count++;
 		}
 	}
-	_putchar('\0');
 
 	return (count);
 }
