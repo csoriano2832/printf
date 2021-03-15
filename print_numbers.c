@@ -31,18 +31,18 @@ int print_int(int n)
 }
 
 /**
- * recur_unsigned - prints unsigned integer
+ * recur_unsig - prints unsigned integer
  * @n: number to be printed
  *
  * Return: count of numbers
  */
-int recur_unsigned(unsigned int n)
+int recur_unsig(unsigned int n)
 {
 	int count = 1;
 
 	if ((n / 10) > 0)
 	{
-		count += recur_unsigned(n / 10);
+		count += recur_unsig(n / 10);
 	}
 	_putchar((n % 10) + 48);
 	return (count);

@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
-  * print_digit - prints an integer
+  * print_digits - prints an integer
   * @ap: argument
   *
   * Return: count of numbers printed
@@ -18,19 +18,19 @@ int print_digits(va_list ap)
 }
 
 /**
- * print_unsigned - printes unsigned interger
+ * print_unsig - printes unsigned interger
  * @ap: argument
  *
  * Return: count for numbers printed
  */
 
-int print_unsigned(va_list ap)
+int print_unsig(va_list ap)
 {
 	unsigned int num = 0;
 	int count = 0;
 
 	num = va_arg(ap, unsigned int);
-	count += recur_unsigned(num);
+	count += recur_unsig(num);
 
 	return (count);
 }
