@@ -9,7 +9,63 @@
  */
 int conv_spec(const char *format, va_list ap)
 {
-	int i, count = 0, j = 0;
+	int i, count = 0;
+	
+	for (i = 0; format[i]; i++)
+	{
+		if (format[i] == '%' && format[i + 1])
+		{
+			if (valid_conversion(format[i + 1]) == 1)
+			{
+				count += function_call(format[i + 1], ap);
+				i++;
+			}
+			else
+			{
+				_putchar(format[i]);
+				count++;
+			}
+		}
+		else
+		{
+			_putchar(format[i]);
+			count++;
+		}
+	}
+	return (count);
+}
+
+/**
+ * valid_conversion - checks if character is a valid conversion specifier
+ * @c: a character from format
+ ea
+ * Return: 0 or 1
+ */
+int valid_conversion(char c)
+{
+	int i;
+	char array[] = {'c', 's', 'i', 'd', 'o', 'u', 'b', '%'};
+
+	for(i = 0; array[i] != '\0'; i++)
+	{
+		if (c == array[i])
+		{
+			return (1);
+		}
+	}
+	return (0);
+}
+
+/**
+ * function_call - calls the correct function to print
+ * @c: a character to compare with converter array
+ * @ap: the next argument
+ *
+ * Return: number of characters printed
+ */
+int function_call(char c, va_list ap)
+{
+	int i, count = 1;
 	conv_t converter[] = {
 		{'c', print_char},
 		{'s', print_string},
@@ -21,30 +77,15 @@ int conv_spec(const char *format, va_list ap)
 		{'\0', NULL}
 	};
 
-	for (i = 0; format[i] != '\0'; i++)
+	for (i = 0; converter[i].specifier != '\0'; i++)
 	{
-		if (format[i] == '%')
+		if (converter[i].specifier == c)
 		{
-			if (format[i + 1] == '%')
-			{
-				_putchar(format[i]);
-				count++;
-			}
-			for (j = 0; converter[j].specifier != '\0'; j++)
-			{
-				if (converter[j].specifier == format[i + 1])
-				{
-					converter[j].f(ap);
-					i++;
-					break;
-				}
-			}
-		}
-		else
-		{
-			_putchar(format[i]);
-			count++;
+			count += converter[i].f(ap);
+			return (count);
 		}
 	}
+	_putchar(c);
+
 	return (count);
 }

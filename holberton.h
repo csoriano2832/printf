@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <stdio.h>
+#include <stdbool.h>
 
 /**
  * struct conversion - a struct which associates characters to functions
@@ -31,5 +32,7 @@ int print_octal(va_list ap);
 int recur_unsig(unsigned int n);
 int recur_binary(unsigned int n);
 int recur_octal(unsigned int n);
+int valid_conversion(char c);
+int function_call(char c, va_list ap);
 
 #endif
