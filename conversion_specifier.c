@@ -44,7 +44,7 @@ int conv_spec(const char *format, va_list ap)
 int valid_conversion(char c)
 {
 	int i;
-	char array[] = {'c', 's', 'i', 'd', 'o', 'u', 'b', '%'};
+	char array[] = {'c', 's', '%', 'i', 'd', 'o', 'u', 'b'};
 
 	for (i = 0; array[i] != '\0'; i++)
 	{
@@ -65,10 +65,11 @@ int valid_conversion(char c)
  */
 int function_call(char c, va_list ap)
 {
-	int i, count = 1;
+	int i, count = 0;
 	conv_t converter[] = {
 		{'c', print_char},
 		{'s', print_string},
+		{'%', print_percent},
 		{'i', print_digits},
 		{'d', print_digits},
 		{'u', print_unsig},
@@ -86,6 +87,7 @@ int function_call(char c, va_list ap)
 		}
 	}
 	_putchar(c);
+	count++;
 
 	return (count);
 }

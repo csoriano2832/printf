@@ -15,10 +15,10 @@ int _printf(const char *format, ...)
 	if (format == NULL)
 		return (-1);
 
+	va_start(ap, format);
+	
 	if (ap == NULL)
 		return (-1);
-
-	va_start(ap, format);
 
 	num_of_chars = conv_spec(format, ap);
 

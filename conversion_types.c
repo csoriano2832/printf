@@ -4,7 +4,7 @@
  * print_char - prints a character
  * @ap: argument
  *
- * Return: count of number printed
+ * Return: number of characters printed
  */
 int print_char(va_list ap)
 {
@@ -21,7 +21,7 @@ int print_char(va_list ap)
  * print_string - prints a string
  * @ap: argument
  *
- * Return: count of number printed
+ * Return: number of characters printed
  */
 int print_string(va_list ap)
 {
@@ -36,6 +36,22 @@ int print_string(va_list ap)
 			count++;
 		}
 	}
+
+	return (count);
+}
+
+/**
+ * print_percent - prints a %
+ *
+ * Return: number of characters printed
+ */
+int print_percent(va_list ap)
+{
+	int count = 0;
+	(void) ap;
+
+	_putchar('%');
+	count++;
 
 	return (count);
 }
