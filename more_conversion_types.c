@@ -44,9 +44,10 @@ int print_unsig(va_list ap)
 
 int print_binary(va_list ap)
 {
-	int num = 0, count = 0;
+	unsigned int num = 0;
+	int count = 0;
 
-	num = va_arg(ap, int);
+	num = va_arg(ap, unsigned int);
 	count += recur_binary(num);
 
 	return (count);
