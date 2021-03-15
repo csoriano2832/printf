@@ -18,8 +18,6 @@ int conv_spec(const char *format, va_list ap)
 		{'u', print_unsigned},
 		{'o', print_octal},
 		{'b', print_binary},
-		{'x', print_h},
-		{'X', print_H},
 		{'\0', NULL}
 	};
 
