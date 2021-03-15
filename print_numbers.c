@@ -53,7 +53,7 @@ int recur_unsig(unsigned int n)
  *
  * Return: count of numbers printed
  */
-int recur_binary(int n)
+int recur_binary(unsigned int n)
 {
 	int count = 1;
 
