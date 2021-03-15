@@ -9,7 +9,12 @@
 int print_char(va_list ap)
 {
 	int count = 0;
-	unsigned char c = va_arg(ap, int);
+	unsigned char c;
+
+	if (ap == NULL)
+		return (-1);
+
+	c = va_arg(ap, int);
 
 	_putchar(c);
 	count++;
@@ -26,7 +31,12 @@ int print_char(va_list ap)
 int print_string(va_list ap)
 {
 	int i, count = 0;
-	char *string = va_arg(ap, const char *);
+	char *string;
+
+	if (ap == NULL)
+		return (-1);
+
+	string = va_arg(ap, char *);
 
 	if (string)
 	{
