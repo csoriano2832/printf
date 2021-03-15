@@ -13,7 +13,10 @@ int _printf(const char *format, ...)
 	int num_of_chars = 0;
 
 	if (format == NULL)
-		exit(1);
+		return (-1);
+
+	if (ap == NULL)
+		return (-1);
 
 	va_start(ap, format);
 
