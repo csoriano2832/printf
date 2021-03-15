@@ -10,7 +10,7 @@
 int conv_spec(const char *format, va_list ap)
 {
 	int i, count = 0;
-	
+
 	for (i = 0; format[i]; i++)
 	{
 		if (format[i] == '%' && format[i + 1])
@@ -38,7 +38,7 @@ int conv_spec(const char *format, va_list ap)
 /**
  * valid_conversion - checks if character is a valid conversion specifier
  * @c: a character from format
- ea
+ *
  * Return: 0 or 1
  */
 int valid_conversion(char c)
@@ -46,7 +46,7 @@ int valid_conversion(char c)
 	int i;
 	char array[] = {'c', 's', 'i', 'd', 'o', 'u', 'b', '%'};
 
-	for(i = 0; array[i] != '\0'; i++)
+	for (i = 0; array[i] != '\0'; i++)
 	{
 		if (c == array[i])
 		{
