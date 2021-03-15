@@ -25,10 +25,10 @@ int print_char(va_list ap);
 int print_string(va_list ap);
 int print_digits(va_list ap);
 int print_int(int n);
-int print_unsigned(va_list ap);
+int print_unsig(va_list ap);
 int print_binary(va_list ap);
 int print_octal(va_list ap);
-int recur_unsigned(unsigned int n);
+int recur_unsig(unsigned int n);
 int recur_binary(int n);
 int recur_octal(unsigned int n);
 

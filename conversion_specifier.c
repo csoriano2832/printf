@@ -15,7 +15,7 @@ int conv_spec(const char *format, va_list ap)
 		{'s', print_string},
 		{'i', print_digits},
 		{'d', print_digits},
-		{'u', print_unsigned},
+		{'u', print_unsig},
 		{'o', print_octal},
 		{'b', print_binary},
 		{'\0', NULL}
