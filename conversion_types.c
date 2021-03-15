@@ -80,6 +80,9 @@ int print_rot13(va_list ap)
 	char arr1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char arr2[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
+	if (ap == NULL)
+		return (-1);
+
 	string = va_arg(ap, char *);
 
 	for (i = 0; string[i] != '\0'; i++)
@@ -93,6 +96,9 @@ int print_rot13(va_list ap)
 				break;
 			}
 		}
+
+		if (arr1[j] == '\0')
+			_putchar(string[i]);
 	}
 	return (count);
 }
