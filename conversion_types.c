@@ -66,3 +66,33 @@ int print_percent(va_list ap)
 
 	return (count);
 }
+
+/**
+ * print_rot13 - takes a string and tranforms it using rot13 encryption
+ * @ap: argument
+ *
+ * Return: number of characters printed
+ */
+int print_rot13(va_list ap)
+{
+	int i, j, count = 0;
+	char *string;
+	char arr1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char arr2[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+
+	string = va_arg(ap, char *);
+
+	for (i = 0; string[i] != '\0'; i++)
+	{
+		for (j = 0; arr1[j] != '\0'; j++)
+		{
+			if (string[i] == arr1[j])
+			{
+				_putchar(arr2[j]);
+				count++;
+				break;
+			}
+		}
+	}
+	return (count);
+}

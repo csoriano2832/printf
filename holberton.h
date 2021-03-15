@@ -25,6 +25,7 @@ int conv_spec(const char *format, va_list ap);
 int print_char(va_list ap);
 int print_string(va_list ap);
 int print_percent(va_list ap);
+int print_rot13(va_list ap);
 int print_digits(va_list ap);
 int print_int(int n);
 int print_unsig(va_list ap);
