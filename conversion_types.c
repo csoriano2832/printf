@@ -42,7 +42,7 @@ int print_string(va_list ap)
 
 /**
  * print_percent - prints a %
- * @ap- argument
+ * @ap: argument
  *
  * Return: number of characters printed
  */
