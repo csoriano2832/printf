@@ -21,7 +21,7 @@ int conv_spec(const char *format, va_list ap)
 		{'\0', NULL}
 	};
 
-	for (i = 0; format[i]; i++)
+	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
 		{
