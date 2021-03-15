@@ -1,11 +1,35 @@
-#ifndef _printf_
-#define _printf_
+#ifndef _HOLBERTON_H_
+#define _HOLBERTON_H_
 
+#include <unistd.h>
 #include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
 #include <stdarg.h>
+#include <stdio.h>
 
+/**
+ * struct conversion - a struct which associates characters to functions
+ * @specifier: a specific character
+ * @f: a pointer to the function associated to specifier
+ *
+ */
+typedef struct conversion
+{
+	char specifier;
+	int (*f)(va_list args);
+} conv_t;
+
+int _putchar(char c);
 int _printf(const char *format, ...);
+int conv_spec(const char *format, va_list ap);
+int print_char(va_list ap);
+int print_string(va_list ap);
+int print_digits(va_list ap);
+int print_int(int n);
+int print_unsigned(va_list ap);
+int print_binary(va_list ap);
+int print_octal(va_list ap);
+int recur_unsigned(unsigned int n);
+int recur_binary(int n);
+int recur_octal(unsigned int n);
 
 #endif
