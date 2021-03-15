@@ -9,8 +9,9 @@
 int print_char(va_list ap)
 {
 	int count = 0;
+	unsigned char c = va_arg(ap, int);
 
-	_putchar(va_arg(ap, int));
+	_putchar(c);
 	count++;
 
 	return (count);
@@ -25,9 +26,7 @@ int print_char(va_list ap)
 int print_string(va_list ap)
 {
 	int i, count = 0;
-	char *string;
-
-	string = va_arg(ap, char *);
+	char *string = va_arg(ap, const char *);
 
 	if (string)
 	{
@@ -37,6 +36,7 @@ int print_string(va_list ap)
 			count++;
 		}
 	}
+	_putchar('\0');
 
 	return (count);
 }
