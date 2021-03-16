@@ -28,6 +28,11 @@ int conv_spec(const char *format, va_list ap)
 		}
 		else
 		{
+			if (format[i] == '%')
+			{
+				return (-1);
+			}
+
 			_putchar(format[i]);
 			count++;
 		}
