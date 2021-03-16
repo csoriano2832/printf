@@ -51,7 +51,7 @@ int recur_h(unsigned int n)
 	{
 		count += recur_h(n / 16);
 	}
-	switch(n % 16)
+	switch (n % 16)
 	{
 		case 10:
 			_putchar('a');
@@ -92,6 +92,28 @@ int recur_H(unsigned int n)
 	{
 		count += recur_H(n / 16);
 	}
-	_putchar((n % 16) + 48);
+	switch (n % 16)
+	{
+		case 10:
+			_putchar('A');
+			break;
+		case 11:
+			_putchar('B');
+			break;
+		case 12:
+			_putchar('C');
+			break;
+		case 13:
+			_putchar('D');
+			break;
+		case 14:
+			_putchar('E');
+			break;
+		case 15:
+			_putchar('F');
+			break;
+		default:
+			_putchar((n % 16) + 48);
+	}
 	return (count);
 }
