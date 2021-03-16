@@ -8,7 +8,8 @@
  */
 int print_int(int n)
 {
-	int count = 1, num = 0;
+	int count = 1;
+	unsigned int num = 0;
 
 	if (n < 0)
 	{
