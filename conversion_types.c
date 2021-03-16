@@ -33,11 +33,12 @@ int print_string(va_list ap)
 	int i, count = 0;
 	char *string;
 
-	if (ap == NULL)
-		return (-1);
-
 	string = va_arg(ap, char *);
 
+	if (string == NULL)
+	{
+		string = "(null)";
+	}
 	if (string)
 	{
 		for (i = 0; string[i] != '\0'; i++)
@@ -96,9 +97,11 @@ int print_rot13(va_list ap)
 				break;
 			}
 		}
-
 		if (arr1[j] == '\0')
+		{
 			_putchar(string[i]);
+			count++;
+		}
 	}
-	return (count);
+	return (count - 1);
 }
