@@ -103,5 +103,5 @@ int print_rot13(va_list ap)
 			count++;
 		}
 	}
-	return (count - 1);
+	return (count);
 }
