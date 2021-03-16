@@ -36,5 +36,9 @@ int recur_binary(unsigned int n);
 int recur_octal(unsigned int n);
 int valid_conversion(char c);
 int function_call(char c, va_list ap);
+int print_h(va_list ap);
+int print_H(va_list ap);
+int recur_h(unsigned int n);
+int recur_H(unsigned int n);
 
 #endif

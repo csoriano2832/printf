@@ -49,7 +49,7 @@ int conv_spec(const char *format, va_list ap)
 int valid_conversion(char c)
 {
 	int i;
-	char array[] = {'c', 's', '%', 'i', 'd', 'o', 'u', 'b', 'R'};
+	char array[] = {'c', 's', '%', 'i', 'd', 'o', 'u', 'b', 'R', 'x', 'X'};
 
 	for (i = 0; array[i] != '\0'; i++)
 	{
@@ -81,6 +81,8 @@ int function_call(char c, va_list ap)
 		{'o', print_octal},
 		{'b', print_binary},
 		{'R', print_rot13},
+		{'x', print_h},
+		{'X', print_H},
 		{'\0', NULL}
 	};
 
