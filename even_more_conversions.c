@@ -7,7 +7,7 @@
 * Return: count for numbers printed
 */
 
-int print_binary(va_list ap) 
+int print_binary(va_list ap)
 {
 	unsigned int num = 0;
 	int count = 0;
@@ -30,7 +30,7 @@ int recur_binary(unsigned int n)
 
 	if ((n / 2) > 0)
 	{
-		count += recur_binary(n / 2); 
+		count += recur_binary(n / 2);
 	}
 	_putchar((n % 2) + 48);
 	return (count);
